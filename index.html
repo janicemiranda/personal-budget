@@ -3,8 +3,119 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Budget Tracker</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
+		<div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+			<h2 class="text-xl font-bold text-gray-700 text-center mb-4">Budget Tracker</h2>
+
+			<!-- Balance Summary -->
+			<div class="bg-gray-200 p-4 rounded-lg text-center mb-4">
+				<h3 class="text-lg font-semibold">Total Balance</h3>
+				<p id="balance" class="text-2xl font-bold text-green-600">$0.00</p>
+			</div>
+
+			<div class="flex justify-between mb-4">
+				<div class="w-1/2 bg-green-100 p-3 rounded-lg text-center mr-2">
+					<h4 class="text-sm font-medium">Income</h4>
+					<p id="income" class="text-lg font-semibold text-green-600">$0.00</p>
+				</div>
+				<div class="w-1/2 bg-red-100 p-3 rounded-lg text-center ml-2">
+					<h4 class="text-sm font-medium">Expenses</h4>
+					<p id="expenses" class="text-lg font-semibold text-red-600">$0.00</p>
+				</div>
+			</div>
+
+			<!-- Add Transaction Form -->
+			<form id="transactionForm" class="mb-4">
+				<label class="block text-sm font-medium text-gray-700">Transaction Type:</label>
+				<select name="type" id="transactionType" class="w-full p-2 mt-1 border rounded-lg" title="Transaction Type">
+					<option value="income">Ingreso (Income)</option>
+					<option value="expense">Egreso (Expense)</option>
+				</select>
+
+				<label class="block text-sm font-medium text-gray-700 mt-2">Amount:</label>
+				<input
+					type="number"
+					id="amount"
+					name="amount"
+					placeholder="Enter amount"
+					class="w-full p-2 mt-1 border rounded-lg"
+					required
+				/>
+
+				<label class="block text-sm font-medium text-gray-700 mt-2">Description:</label>
+				<input
+					type="text"
+					id="description"
+					name="description"
+					placeholder="Enter description"
+					class="w-full p-2 mt-1 border rounded-lg"
+					required
+				/>
+
+				<button
+					type="submit"
+					class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg mt-4 hover:bg-blue-600"
+				>
+					Add Transaction
+				</button>
+			</form>
+
+			<!-- Transaction Table -->
+			<h3 class="text-lg font-semibold text-gray-700 mb-2">Transaction History</h3>
+			<div class="overflow-x-auto">
+				<table class="w-full border-collapse border border-gray-200">
+					<thead>
+						<tr class="bg-gray-100">
+							<th class="p-2 border">Date</th>
+							<th class="p-2 border">Description</th>
+							<th class="p-2 border">Amount</th>
+							<th class="p-2 border">Type</th>
+						</tr>
+					</thead>
+					<tbody id="transactionTable" class="text-center">
+						<tr>
+							<td colspan="4" class="p-2 text-gray-500 text-sm italic">No transactions yet.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="./app.js"></script>
+	</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 	</head>
-	<body></body>
+	<body>
+		<header>
+			<h1>Personal Budget Tracker</h1>
+		</header>
+		<main>
+			<div class="add-transaction">
+				<h2>Record a Transaction</h2>
+				<label for="transactionDesc">Description: </label>
+				<input type="text" title="Transaction Description" placeholder="Enter Description" id="transactionDesc" />
+				<label for="transactionType">Transaction Type: </label>
+				<select name="" id="transactionType">
+					<option value="1">Expense</option>
+					<option value="2">Income</option>
+				</select>
+				<label for="transactionAmount">Amount: </label>
+				<input type="text" title="Transaction Amount" placeholder="Enter Amount" id="transactionAmount" />
+				<button>Add New</button>
+			</div>
+			<div class="transactions"></div>
+			-list
+		</main>
+	</body>
 	<script src="app.js"></script>
-</html>
+</html> -->
